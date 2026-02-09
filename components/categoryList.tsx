@@ -6,7 +6,7 @@ import { CategoryType } from '@/lib/interface'
 
 async function getCategories() {
     const query = `
-        *[_type == "categories"] {
+        *[_type == "categories"] | order(_createdAt desc) {
         _id,
         title,
         "slug": slug.current,
