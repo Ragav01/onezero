@@ -32,6 +32,5 @@ export default async function ArticalPage({ params, }: { params: Promise<{ slug:
   
   return (
     <ArticlesDetails post={post} />
-
   );
 }
