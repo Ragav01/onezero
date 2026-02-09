@@ -24,7 +24,7 @@ async function getPosts(slug: string) {
   return data;
 }
 
-
+export const revalidate = 60
 
 export default async function ArticalPage({ params, }: { params: Promise<{ slug: string }>; }) {
   const { slug } = await params;

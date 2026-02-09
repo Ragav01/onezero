@@ -18,6 +18,8 @@ async function getCategories() {
     return data;
 }
 
+export const revalidate = 60
+
 export default async function Categories() {
   const category: CategoryType[] = await getCategories();
   return (
