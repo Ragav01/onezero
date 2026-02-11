@@ -51,7 +51,7 @@ export default function ArticlesDetails({ post }: Props) {
                         src={urlFor(post.image).url()}
                         alt={post.title}
                         fill
-                        className="object-cover duration-500"
+                        className="object-cover"
                     />
                 </div>
             )}
@@ -70,7 +70,7 @@ export default function ArticlesDetails({ post }: Props) {
                     </div>
                     {/* Content */}
                     <div className="prose prose-md font-body min-w-full">
-                        <PortableText value={post.content} components={PortableTextComponents}/>
+                        <PortableText value={post.content} components={PortableTextComponents} />
                     </div>
                 </div>
 
@@ -89,36 +89,37 @@ export default function ArticlesDetails({ post }: Props) {
                 </div>
             </div>
 
-            <RelatedPost category={post.categories[0].slug}/>            
+            <RelatedPost category={post.categories[0].slug} />
         </div>
     );
 }
 
 
 export const PortableTextComponents = {
-  types: {
-    image: ({ value }: any) => {
-      if (!value?.asset?._ref) return null;
+    types: {
+        image: ({ value }: any) => {
+            if (!value?.asset?._ref) return null;
 
-      return (
-        <div className="my-6">
-          <Image
-            src={urlFor(value).width(900).url()}
-            alt={value.alt || "Post image"}
-            width={900}
-            height={500}
-            className="rounded-lg"
-          />
-        </div>
-      );
-    },
+            return (
+                <div className="my-6 md:my-16 relative w-full h-96 md:h-100 overflow-hidden rounded-t-md bg-red-300">
+                    <Image
+                        src={urlFor(value).url()}
+                        alt={value.alt || "Post image"}
+                        fill
+                        className="object-cover"
+                    />
+                </div>
+            );
+        },
 
-    code: ({ value }: any) => {
-      return (
-        <pre className="bg-zinc-900 text-white p-4 rounded-lg overflow-x-auto my-6">
-          <code>{value.code}</code>
-        </pre>
-      );
+        code: ({ value }: any) => {
+            return (
+                <div>
+                    <pre className="bg-zinc-900 text-white p-4 rounded-lg max-w-72 sm:max-w-full overflow-auto my-6 ">
+                        <code className=''>{value.code}</code>
+                    </pre>ergy that looks productive but isn’t.
+                </div>
+            );
+        },
     },
-  },
 }
