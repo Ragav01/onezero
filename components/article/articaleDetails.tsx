@@ -7,6 +7,8 @@ import { urlFor } from '@/sanity/lib/image';
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import RelatedPost from './relatedPost';
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 interface Props {
     post: FullPostType;
@@ -101,12 +103,12 @@ export const PortableTextComponents = {
             if (!value?.asset?._ref) return null;
 
             return (
-                <div className="my-6 md:my-16 relative w-full h-96 md:h-100 overflow-hidden rounded-t-md bg-red-300">
+                <div className="relative isolate my-10 w-full h-[400px]">
                     <Image
                         src={urlFor(value).url()}
                         alt={value.alt || "Post image"}
                         fill
-                        className="object-cover"
+                        className="object-cover rounded-xl"
                     />
                 </div>
             );
@@ -114,11 +116,20 @@ export const PortableTextComponents = {
 
         code: ({ value }: any) => {
             return (
-                <div>
-                    <pre className="bg-zinc-900 text-white p-4 rounded-lg max-w-72 sm:max-w-full overflow-auto my-6 ">
-                        <code className=''>{value.code}</code>
-                    </pre>ergy that looks productive but isn’t.
-                </div>
+                <div className="my-8 rounded-xl overflow-hidden">
+                    <SyntaxHighlighter
+                        language={value.language || "javascript"}
+                        style={oneDark}
+                        showLineNumbers
+                        customStyle={{
+                        margin: 0,
+                        padding: "20px",
+                        fontSize: "14px",
+                        }}
+                    >
+                        {value.code}
+                    </SyntaxHighlighter>
+                    </div>
             );
         },
     },
