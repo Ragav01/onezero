@@ -54,9 +54,9 @@ export default async function CategoryPage({ params, }: { params: Promise<{ slug
         <p className='text-foreground-muted'>{slug}</p>
       </div>
 
-      <div className='md:w-1/3 space-y-2'>
+      <div className='md:w-2/3 space-y-2'>
         <h1 className='text-2xl md:text-4xl tracking-tight font-semibold'>{category[0].title}</h1>
-        <p>Explore strategies, leadership skills, and growth tactics for thriving businesses.</p>
+        <p>{category[0].description}</p>
       </div>
 
       <div className='my-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>

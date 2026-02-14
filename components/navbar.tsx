@@ -49,9 +49,11 @@ export const Navbar = () => {
                         ))}
                     </div>
                     <div className='px-4 py-8'>
-                        <Button size={'lg'}>
-                            Let&apos;s Talk
-                            <ArrowRight />
+                        <Button size={'lg'} asChild>
+                            <a href='mailto:isofinsec@gmail.com'>
+                                Let&apos;s Talk
+                                <ArrowRight />
+                            </a>
                         </Button>
                     </div>
                 </nav>
@@ -69,9 +71,11 @@ export const Navbar = () => {
                             ))}
                         </div>
                     </div>
-                    <Button size={'lg'}>
-                        Let&apos;s Talk
-                        <ArrowRight />
+                    <Button size={'lg'} asChild>
+                        <a href='mailto:isofinsec@gmail.com' className='no-underline'>
+                            Let&apos;s Talk
+                            <ArrowRight />
+                        </a>
                     </Button>
                 </nav>
             </div>
