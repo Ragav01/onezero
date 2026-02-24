@@ -28,6 +28,8 @@ export default async function SliderList() {
   const posts: PostType[] = await getPosts();
 
   return (
-    <Slider posts={posts} />
+    <div className='main min-h-fit md:mb-24'>
+      <Slider posts={posts} />
+    </div>
   )
 }

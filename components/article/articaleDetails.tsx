@@ -30,7 +30,7 @@ export default function ArticlesDetails({ post }: Props) {
                 <div className="my-6 flex gap-1 items-center capitalize [&_p]:text-sm [&_a]:text-sm [&_a]:font-body [&_a]:font-medium">
                     <Link href="/">Home</Link>
                     <ChevronRight className="md:h-4 md:w-4 opacity-45" />
-                    <Link href="/articles">Articles</Link>
+                    <Link href="/categories">{post.categories?.[0] && post.categories[0].title}</Link>
                     <ChevronRight className="md:h-4 md:w-4 opacity-45" />
                     <p className="text-foreground-muted truncate">{cleanedSlug}</p>
                 </div>
@@ -103,7 +103,7 @@ export const PortableTextComponents = {
             if (!value?.asset?._ref) return null;
 
             return (
-                <div className="relative isolate my-10 w-full h-[400px]">
+                <div className="relative isolate my-10 w-full h-100">
                     <Image
                         src={urlFor(value).url()}
                         alt={value.alt || "Post image"}

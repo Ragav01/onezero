@@ -26,33 +26,36 @@ export default function Articles({ categories, posts }: Props) {
         Articles
       </h1>
 
-      {/* Buttons */}
-      <div className="my-8 flex flex-wrap gap-2">
-        <Button
-          size="lg"
-          variant={selected === 'all' ? 'default' : 'outline'}
-          onClick={() => setSelected('all')}
-        >
-          All articles
-        </Button>
-
-        {categories.map(cat => (
+      <div className='flex flex-col md:flex-row gap-8'>
+        {/* Buttons */}
+        <div className="my-8 md:w-2/12 flex flex-wrap md:flex-col gap-2">
           <Button
-            key={cat.id}
             size="lg"
-            variant={selected === cat.slug ? 'default' : 'outline'}
-            onClick={() => setSelected(cat.slug)}
+            variant={selected === 'all' ? 'default' : 'outline'}
+            className='md:px-3 justify-start truncate w-full'
+            onClick={() => setSelected('all')}
           >
-            {cat.title}
+            <p className='truncate font-medium uppercase'>All articles</p>
           </Button>
-        ))}
-      </div>
 
-      {/* Posts */}
-      <div className="pt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredPosts.map(post => (
-          <PostCard post={post} key={post.slug} />
-        ))}
+          {categories.map(cat => (
+            <Button
+              key={cat.id}
+              size="lg"
+              variant={selected === cat.slug ? 'default' : 'outline'}
+              className='md:px-3 justify-start w-full'
+              onClick={() => setSelected(cat.slug)}
+            >
+              <p className='truncate font-medium uppercase'>{cat.title}</p>
+            </Button>
+          ))}
+        </div>
+        {/* Posts */}
+        <div className="pt-8 md:w-10/12 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+          {filteredPosts.map(post => (
+            <PostCard post={post} key={post.slug} />
+          ))}
+        </div>
       </div>
     </div>
   )

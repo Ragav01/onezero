@@ -49,9 +49,7 @@ export default async function CategoryPage({ params, }: { params: Promise<{ slug
       <div className='my-6 flex gap-1 items-center capitalize [&_p]:text-sm [&_a]:text-sm [&_a]:font-body [&_a]:font-medium'>
         <Link href={'/'}>Home</Link>
         <ChevronRight size={14} className='opacity-45'/>
-        <Link href={'/categories'}>Category</Link>
-        <ChevronRight size={14} className='opacity-45'/>
-        <p className='text-foreground-muted'>{slug}</p>
+        <p className='text-foreground-muted'>{category[0].title}</p>
       </div>
 
       <div className='md:w-2/3 space-y-2'>

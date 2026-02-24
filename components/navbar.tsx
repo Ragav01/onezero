@@ -17,7 +17,6 @@ export const Navbar = () => {
 
     const navigation: navItems[] = [
         { name: 'Home', link: '/' },
-        { name: 'Articles', link: '/articles' },
         { name: 'Categories', link: '/categories' },
         { name: 'About', link: '/about' },
     ];
@@ -60,7 +59,7 @@ export const Navbar = () => {
             </div>
             {/* Desktop Navigation */}
             <div className='hidden md:block'>
-                <nav className='max-w-6xl mx-auto my-4 px-4 py-3 xl:hover:bg-card duration-200 flex justify-between items-center rounded-lg'>
+                <nav className='max-w-7xl mx-auto my-4 px-4 py-3 xl:hover:bg-card duration-200 flex justify-between items-center rounded-lg'>
                     <div className='flex items-center gap-14'>
                         <Image src="https://raw.githubusercontent.com/Ragav01/bi/78f7f0199a489c271ccf1e5c3b32c6972652859c/images/logo.svg" alt="Logo" width={100} height={30} />
                         <div className='flex items-center gap-5'>

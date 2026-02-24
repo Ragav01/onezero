@@ -55,6 +55,6 @@
 
 @layer components{
   .main{
-    @apply max-w-6xl mx-auto px-4  pt-14 md:pt-4 min-h-[calc(100vh-110px)] ;
+    @apply max-w-7xl mx-auto px-4  pt-14 md:pt-4 min-h-[calc(100vh-110px)] ;
   }
 }
