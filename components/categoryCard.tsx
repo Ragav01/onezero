@@ -12,7 +12,7 @@ const CategoryCard = ({category}: Props) => {
     <>
         <Link href={`/categories/${category.slug}`} className='group col-span-1 h-64 bg-card rounded-lg overflow-hidden relative'>
             {category.image && <Image fill src={urlFor(category.image).url()} alt={category.slug} className="hidden group-hover:block absolute w-full h-full  scale-125 object-cover" />}
-            <div className='absolute w-full h-full flex flex-col items-center justify-center group-hover:justify-end z-10 p-6 group-hover:bg-black/30 '>
+            <div className='absolute w-full h-full flex flex-col items-center justify-center group-hover:justify-end z-10 p-6'>
                 {category.image && <Image unoptimized src={urlFor(category.image).url()} alt={category.title} width={64} height={64} className="block group-hover:hidden w-16 h-16 object-cover mx-auto rounded-lg"/>}
                 <h2 className='text-lg text-center my-3 group-hover:-mb-4 group-hover:text-white font-semibold '>{category.title}</h2>
                 <p className='text-center  text-foreground-muted line-clamp-2 group-hover:hidden leading-5 '>{category.description}</p>
