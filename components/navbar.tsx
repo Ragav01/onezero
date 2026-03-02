@@ -5,8 +5,9 @@ import Image from 'next/image';
 // import Logo from '../../assets/logo.svg';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight} from 'lucide-react';
 import { usePathname } from 'next/navigation';
+import SearchModal from './searchModal';
 
 interface navItems {
     name: string;
@@ -70,12 +71,15 @@ export const Navbar = () => {
                             ))}
                         </div>
                     </div>
-                    <Button size={'lg'} asChild>
-                        <a href='mailto:isofinsec@gmail.com' className='no-underline'>
-                            Let&apos;s Talk
-                            <ArrowRight />
-                        </a>
-                    </Button>
+                    <div className='flex items-center gap-2'>
+                        <SearchModal/>
+                        <Button size={'lg'} asChild>
+                            <a href='#footer' className='no-underline'>
+                                Let&apos;s Talk
+                                <ArrowRight />
+                            </a>
+                        </Button>
+                    </div>
                 </nav>
             </div>
         </>

@@ -33,7 +33,7 @@ const Footer = () => {
             return null; // Do not render Navbar on Sanity Studio routes
         }   
     return (
-        <div className='bg-card w-full'>
+        <div className='bg-card w-full' id='footer'>
             <div className='max-w-6xl mx-auto px-4 pt-14 pb-8'>
                 <div className='grid  md:grid-cols-12 gap-10 md:gap-4'>
                     <div className='md:col-span-8 max-w-110 space-y-6'>

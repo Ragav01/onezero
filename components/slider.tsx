@@ -29,9 +29,9 @@ const Slider = ({ posts }: Props) => {
                 opts={{ loop: true }}
             >
                 <CarouselContent>
-                    {posts.map((post) => {
+                    {posts.map((post, index) => {
                         return (
-                            <CarouselItem key={post.id}>
+                            <CarouselItem key={index}>
                                 <Link href={`/articles/${post.slug}`} className="block group h-90 md:h-110 p-3 md:p-5 relative w-full bg-card rounded-lg overflow-hidden">
                                     {
                                         post.image ? <Image loading='lazy' src={urlFor(post.image).url()} alt={post.title} fill className="object-cover group-hover:scale-115 duration-500" />
