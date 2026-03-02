@@ -65,7 +65,7 @@ const Slider = ({ posts }: Props) => {
 
                             <div className='space-y-2 px-3 md:px-4 w-full'>
                                 <p className='text-[10px]  md:text-xs uppercase font-medium text-foreground-muted'>{formatDate(post.date)} / {post.author}</p>
-                                <p className='text-sm md:text-lg font-semibold md:leading-6 line-clamp-2'>{post.title}</p>
+                                <p className='text-sm md:text-lg font-semibold md:leading-6 '>{post.title}</p>
                             </div>
                         </Link>
                     )

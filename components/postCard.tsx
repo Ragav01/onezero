@@ -27,7 +27,7 @@ const PostCard = ({ post }: Props) => {
              <div className='space-y-2 md:space-y-3 p-4'>
                  <p className='text-xs md:text-xs uppercase font-medium text-foreground-muted'>{formatDate(post.date)} / post by <span className='text-foreground'>{post.author}</span></p>
                  <div className='space-y-3 md:space-y-2'>
-                    <h2 className='text-lg font-semibold line-clamp-2 leading-5 mt-2'>{post.title}</h2>
+                    <h2 className='text-lg font-semibold leading-5 mt-2'>{post.title}</h2>
                     <p className='text-sm text-foreground-muted line-clamp-2 leading-tight'>{post.description}</p>
                  </div>
              </div>
