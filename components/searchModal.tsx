@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { useRouter } from "next/navigation";
-import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import {
   Command,
   CommandInput,
@@ -92,14 +92,22 @@ export default function SearchModal() {
       </DialogTrigger>
 
       {/* Modal */}
-      <DialogContent showCloseButton={false} className="p-0 overflow-hidden max-w-xl mx-auto border-5 border-border shadow-2xl">
+      <DialogContent  className="p-0 overflow-hidden max-w-xl mx-auto border-5 border-border shadow-2xl">
+        <DialogHeader className="p-3 pb-0">
+            <DialogTitle>Search articles</DialogTitle>
+          </DialogHeader>
         <Command shouldFilter={false} >
-          <CommandInput
-            placeholder="Search articles..."
-            value={query}
-            onValueChange={setQuery}
-          />
-
+          <div className="flex h-10 items-center gap-2 bg-secondary rounded-sm border border-border px-3 m-2">
+            <Search size={16}/>
+            <input
+              type="text"
+              spellCheck
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search articles..."
+              className="placeholder:text-muted-foreground flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-hidden disabled:cursor-not-allowed disabled:opacity-50"
+            />
+          </div>
           <CommandList>
             <CommandEmpty>No results found.</CommandEmpty>
             <CommandGroup heading="Recent articles">

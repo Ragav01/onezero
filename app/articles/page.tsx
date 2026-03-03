@@ -5,7 +5,7 @@ import React from 'react'
 
 async function getCategories() {
     const query = `
-        *[_type == "categories"] {
+        *[_type == "categories"] | order(title asc) {
         "id": _id,
         title,
         "slug": slug.current,

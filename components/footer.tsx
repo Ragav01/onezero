@@ -15,7 +15,6 @@ interface categories {
 const Footer = () => {
   const navigation: navItems[] = [
         { name: 'Home', link: '/' },
-        { name: 'Articles', link: '/articles' },
         { name: 'Categories', link: '/categories' },
         { name: 'About', link: '/about' },
     ];
