@@ -54,51 +54,27 @@ export default function SearchModal() {
 
   const [open, setOpen] = React.useState(false)
   return (
-    // <div className="flex flex-col gap-4">
-    //   <Button onClick={() => setOpen(true)} variant="outline" className="w-fit">
-    //     Search articles...
-    //   </Button>
-    //   <CommandDialog open={open} onOpenChange={setOpen} showCloseButton={false}>
-    //     <Command >
-    //       <CommandInput 
-    //         placeholder="Search articles..."
-    //         value={query}
-    //         onValueChange={setQuery}
-    //       />
-    //       <CommandList>
-    //         <CommandEmpty>No results found.</CommandEmpty>
-    //         <CommandGroup>
-    //           <CommandGroup heading={"Recent Articles"}>
-    //            {filteredPosts.slice(0, 3).map((post) => (
-    //             <CommandItem
-    //               key={post.slug}
-    //               onSelect={() => router.push(`/articles/${post.slug}`)}
-    //               className="text-foreground-muted hover:text-foreground hover:bg-gray-200 cursor-pointer"
-    //             >
-    //               {post.title}
-    //             </CommandItem>
-    //           ))}
-    //         </CommandGroup>
-    //         </CommandGroup>
-    //       </CommandList>
-    //     </Command>
-    //   </CommandDialog>
-    // </div>
-    <Dialog>
+    <Dialog
+      open={open}
+      onOpenChange={(isOpen) => {
+        setOpen(isOpen)
+        if (!isOpen) setQuery("")
+      }}
+    >
       {/* Search Button */}
-      <DialogTrigger  className="h-10 w-64 px-3 flex items-center gap-3 text-foreground-muted hover:text-foreground rounded-md border border-border">
-          <Search size={18}/>
-          <p className="text-sm">Search articles...</p>
+      <DialogTrigger className="h-10 w-64 px-3 flex items-center gap-3 text-foreground-muted hover:text-foreground rounded-md border border-border">
+        <Search size={18} />
+        <p className="text-sm">Search articles...</p>
       </DialogTrigger>
 
       {/* Modal */}
-      <DialogContent  className="p-0 overflow-hidden max-w-xl mx-auto border-5 border-border shadow-2xl">
+      <DialogContent className="p-0 overflow-hidden max-w-xl mx-auto border-5 border-border shadow-2xl">
         <DialogHeader className="p-3 pb-0">
-            <DialogTitle>Search articles</DialogTitle>
-          </DialogHeader>
+          <DialogTitle>Search articles</DialogTitle>
+        </DialogHeader>
         <Command shouldFilter={false} >
           <div className="flex h-10 items-center gap-2 bg-secondary rounded-sm border border-border px-3 m-2">
-            <Search size={16}/>
+            <Search size={16} />
             <input
               type="text"
               spellCheck
