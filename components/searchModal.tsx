@@ -53,13 +53,18 @@ export default function SearchModal() {
   });
 
   const [open, setOpen] = React.useState(false)
+
+  const handleOpenChange = (isOpen: boolean) => {
+    setOpen(isOpen);
+    if (!isOpen) {
+      setQuery("");
+    }
+  };
+
   return (
     <Dialog
       open={open}
-      onOpenChange={(isOpen) => {
-        setOpen(isOpen)
-        if (!isOpen) setQuery("")
-      }}
+      onOpenChange={handleOpenChange}
     >
       {/* Search Button */}
       <DialogTrigger className="h-10 w-64 px-3 flex items-center gap-3 text-foreground-muted hover:text-foreground rounded-md border border-border">
